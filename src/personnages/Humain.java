@@ -1,6 +1,6 @@
 package personnages;
 
-public class Humain {
+public abstract class Humain {
 	private String nom;
 	private int argent;
 	private String boisson;
@@ -11,7 +11,7 @@ public class Humain {
 		this.boisson = boisson;
 	}
 	
-	public void parler(String texte) {
+	protected void parler(String texte) {
 		StringBuilder texte_affichage = new StringBuilder();
 		texte_affichage.append("(");
 		texte_affichage.append(this.nom);
@@ -56,7 +56,7 @@ public class Humain {
 		this.argent += n;
 	}
 	
-	public void perdreArgent(int n) {
+	protected void perdreArgent(int n) {
 		this.argent -= n;
 	}
 }

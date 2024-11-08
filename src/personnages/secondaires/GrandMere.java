@@ -7,7 +7,7 @@ public class GrandMere extends Humain{
 	
 	private Humain [] memoire = new Humain [30]; 
 	private int nbConnaissances = 0;
-	Random r = new Random();
+	private Random r = new Random();
 	
 	public GrandMere(String nom, int argent) {
 		super(nom, argent, "tisane");
