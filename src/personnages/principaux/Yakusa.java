@@ -22,7 +22,7 @@ public class Yakusa extends Humain {
 	
 	public void extorquer(Commercant c) {
 		gagnerArgent(c.seFaireExtorquer());
-		reputation+=1;
+		reputation += 1;
 		StringBuilder result = new StringBuilder();
 		result.append("J’ai piqué le fric de ");
 		result.append(c.getNom());
