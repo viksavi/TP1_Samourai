@@ -29,8 +29,9 @@ public class GrandMere extends Humain{
 	}
 	
 	public void ragoter() {
-		for (Humain humain : memoire) {
+		for (int i = 0; i < nbConnaissances; i++) {
 			StringBuilder texte = new StringBuilder();
+			Humain humain = memoire[i];
 			if (humain instanceof Traitre) {
 				texte.append("Je sais que ");
 				texte.append(humain.getNom());

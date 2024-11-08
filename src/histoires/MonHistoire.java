@@ -3,7 +3,10 @@ package histoires;
 import personnages.Humain;
 import personnages.principaux.Commercant;
 import personnages.principaux.Ronin;
+import personnages.principaux.Samourai;
 import personnages.principaux.Yakusa;
+import personnages.secondaires.GrandMere;
+import personnages.secondaires.Traitre;
 
 public class MonHistoire {
 
@@ -20,6 +23,29 @@ public class MonHistoire {
 		ronin.donner(10, commercant );
 		ronin.provoquer(yakusa);
 		ronin.direBonjour();
+		
+		Samourai samourai = new Samourai("Samu", 30, "vodka", "Sensei");
+		samourai.direBonjour();
+		samourai.boire();
+		samourai.boire("sake");
+		
+		Traitre traitre = new Traitre("John", 50, "potion", "Samu");
+		traitre.direBonjour();
+		traitre.extorquer(commercant);
+		traitre.direBonjour();
+		traitre.boire();
+		traitre.faireLeGentil(ronin, 10);
+		traitre.direBonjour();
+		
+		GrandMere grandMere = new GrandMere("Sonya", 20);
+		grandMere.direBonjour();
+		grandMere.boire();
+		grandMere.faireConnaissanceAvec(samourai);
+		grandMere.faireConnaissanceAvec(ronin);
+		grandMere.faireConnaissanceAvec(yakusa);
+		grandMere.faireConnaissanceAvec(traitre);
+		
+		grandMere.ragoter();
 
 	}
 
