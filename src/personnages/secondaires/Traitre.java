@@ -38,6 +38,7 @@ public class Traitre extends Samourai {
 		StringBuilder texte = new StringBuilder();
 		h.gagnerArgent(argent);
 		this.perdreArgent(argent);
+		this.traitrise -= argent / 10;
 		texte.append("Tiens ");
 		texte.append(h.getNom());
 		texte.append(" voilà ");
