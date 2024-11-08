@@ -1,12 +1,13 @@
 package personnages.secondaires;
 
 import personnages.Humain;
+import java.util.Random;
 
 public class GrandMere extends Humain{
 	
 	private Humain [] memoire = new Humain [30]; 
 	private int nbConnaissances = 0;
-	java.util.Random r = new java.util.Random();
+	Random r = new Random();
 	
 	public GrandMere(String nom, int argent) {
 		super(nom, argent, "tisane");

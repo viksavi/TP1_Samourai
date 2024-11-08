@@ -6,6 +6,7 @@ import personnages.principaux.Ronin;
 import personnages.principaux.Samourai;
 import personnages.principaux.Yakusa;
 import personnages.secondaires.GrandMere;
+import personnages.secondaires.Ninja;
 import personnages.secondaires.Traitre;
 
 public class MonHistoire {
@@ -46,6 +47,9 @@ public class MonHistoire {
 		grandMere.faireConnaissanceAvec(traitre);
 		
 		grandMere.ragoter();
+		
+		Ninja ninja = new Ninja("Colibri", 0, "cyanure", "Long Fangs");
+		ninja.direBonjour();
 
 	}
 
