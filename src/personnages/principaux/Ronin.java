@@ -11,9 +11,16 @@ public class Ronin extends Humain{
 	
 	}
 	
-	public void donner(int n, Commercant C) {
-		C.gagnerArgent(n);
+	public void donner(int n, Commercant c) {
+		StringBuilder result = new StringBuilder();
 		this.perdreArgent(n);
+		result.append("Tiens ");
+		result.append(c.getNom());
+		result.append(" voilà ");
+		result.append(n);
+		result.append(" sous.");
+		this.parler(result.toString());
+		c.recevoir(n);
 	}
 	
 	public void provoquer(Yakusa y) {
@@ -23,6 +30,7 @@ public class Ronin extends Humain{
 			this.gagnerArgent(argentY);
 			this.honneur += 1;
 			y.perdreDuel();
+			this.parler("Je t’ai eu petit yakusa!");
 		} else {
 			this.honneur -= 1;
 			y.gagnerDuel();

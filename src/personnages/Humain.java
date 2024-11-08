@@ -16,7 +16,8 @@ public class Humain {
 		texte_affichage.append("(");
 		texte_affichage.append(this.nom);
 		texte_affichage.append(") - ");
-		System.out.println(texte_affichage);
+		texte_affichage.append(texte);
+		System.out.println(texte_affichage.toString());
 	}
 	
 	public void direBonjour() {
@@ -25,6 +26,9 @@ public class Humain {
 		result.append(this.nom);
 		result.append(" et j'aime boire du ");
 		result.append(this.boisson);
+		result.append(" et j'ai ");
+		result.append(this.getArgent());
+		result.append(" sous en poche.");
 		this.parler(result.toString());
 	}
 	

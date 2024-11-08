@@ -41,20 +41,17 @@ public class Yakusa extends Humain {
 		StringBuilder result = new StringBuilder();
 		result.append("J’ai perdu mon duel et mes ");
 		result.append(argentPerdus);
-		result.append("sous, snif...");
+		result.append(" sous, snif...");
 		this.parler(result.toString());
 		return argentPerdus;
 	}
 	
 	public void direBonjour() {
-		StringBuilder result = new StringBuilder();
-		result.append("Bonjour ! Je m'appelle ");
-		result.append(this.getNom());
-		result.append(" et j'aime boire du ");
-		result.append(this.getBoisson());
-		result.append(" et j'ai ");
-		result.append(this.getArgent());
-		result.append(" sous en poche.");
-		this.parler(result.toString());
+		super.direBonjour();
+		StringBuilder resultNouveau = new StringBuilder();
+		resultNouveau.append("Mon clan est celui de ");
+		resultNouveau.append(this.clan);
+		resultNouveau.append(".");
+		this.parler(resultNouveau.toString());
 	}
 }
