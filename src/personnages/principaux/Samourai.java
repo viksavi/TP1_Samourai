@@ -1,6 +1,9 @@
 package personnages.principaux;
 
-public class Samourai extends Ronin {
+import Boundaries.IGuerrier;
+import personnages.Humain;
+
+public class Samourai extends Ronin implements IGuerrier{
 	
 	private String seigneur;
 	
@@ -16,4 +19,16 @@ public class Samourai extends Ronin {
 		result.append("! GLOUPS !");
 		this.parler(result.toString());
 	}
+
+	@Override
+	public void combattre(Humain h) {
+		StringBuilder texte = new StringBuilder();
+		texte.append(this.getNom());
+		texte.append(" attaque ");
+		texte.append(h.getNom());
+		texte.append("!");
+		this.parler(texte.toString());
+		
+	}
+
 }

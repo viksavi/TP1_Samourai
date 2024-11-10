@@ -56,7 +56,7 @@ public abstract class Humain {
 		this.argent += n;
 	}
 	
-	protected void perdreArgent(int n) {
+	public void perdreArgent(int n) {
 		this.argent -= n;
 	}
 }

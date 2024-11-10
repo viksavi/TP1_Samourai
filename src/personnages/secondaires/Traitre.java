@@ -1,10 +1,12 @@
 package personnages.secondaires;
 
+import Boundaries.IGuerrier;
+import Boundaries.IPleutre;
 import personnages.Humain;
 import personnages.principaux.Commercant;
 import personnages.principaux.Samourai;
 
-public class Traitre extends Samourai {
+public class Traitre extends Samourai implements IPleutre, IGuerrier{
 	
 	private int traitrise = 0;
 	
@@ -45,5 +47,22 @@ public class Traitre extends Samourai {
 		texte.append(argent);
 		texte.append(" sous.");
 		this.parler(texte.toString());
+	}
+
+	@Override
+	public void fuir() {
+		this.parler(this.getNom() + "a peur et s'enfuit !");
+		
+	}
+
+	@Override
+	public void combattre(Humain h) {
+		StringBuilder texte = new StringBuilder();
+		texte.append(this.getNom());
+		texte.append(" attaque ");
+		texte.append(h.getNom());
+		texte.append("!");
+		this.parler(texte.toString());
+		
 	}
 }

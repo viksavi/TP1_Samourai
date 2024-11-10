@@ -1,8 +1,9 @@
 package personnages.principaux;
 
+import Boundaries.IGuerrier;
 import personnages.Humain;
 
-public class Yakusa extends Humain {
+public class Yakusa extends Humain implements IGuerrier {
 	
 	private String clan;
 	private int reputation;
@@ -53,5 +54,18 @@ public class Yakusa extends Humain {
 		resultNouveau.append(this.clan);
 		resultNouveau.append(".");
 		this.parler(resultNouveau.toString());
+	}
+
+	@Override
+	public void combattre(Humain h) {
+		StringBuilder texte = new StringBuilder();
+		texte.append(this.getNom());
+		texte.append(" du clane ");
+		texte.append(this.getClan());
+		texte.append(" attaque ");
+		texte.append(h.getNom());
+		texte.append("!");
+		this.parler(texte.toString());
+		
 	}
 }
