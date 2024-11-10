@@ -1,55 +1,39 @@
 package histoires;
 
 import Boundaries.Auberge;
-import personnages.Humain;
 import personnages.principaux.Commercant;
 import personnages.principaux.Ronin;
 import personnages.principaux.Samourai;
 import personnages.principaux.Yakusa;
+import personnages.secondaires.Colporteur;
 import personnages.secondaires.GrandMere;
 import personnages.secondaires.Ninja;
 import personnages.secondaires.Traitre;
 
-public class MonHistoire {
+public class HistoireAuberge {
 
 	public static void main(String[] args) {
-		
 		Commercant commercant = new Commercant("Marchand", 35);
-		commercant.direBonjour();
 		Yakusa yakusa = new Yakusa("Yaku le noir", 42, "biere", "WarSong");
-		yakusa.direBonjour();
-		yakusa.extorquer(commercant);
 		Ronin ronin = new Ronin("Roro", 61, "sake");
-		ronin.donner(10, commercant );
-		ronin.provoquer(yakusa);
-		ronin.direBonjour();
-		
 		Samourai samourai = new Samourai("Samu", 30, "vodka", "Sensei");
-		samourai.direBonjour();
-		samourai.boire();
-		samourai.boire("sake");
-		
 		Traitre traitre = new Traitre("John", 50, "potion", "Samu");
-		traitre.direBonjour();
-		traitre.extorquer(commercant);
-		traitre.direBonjour();
-		traitre.boire();
-		traitre.faireLeGentil(ronin, 10);
-		traitre.direBonjour();
-		
 		GrandMere grandMere = new GrandMere("Sonya", 20);
-		grandMere.direBonjour();
-		grandMere.boire();
-		grandMere.faireConnaissanceAvec(samourai);
-		grandMere.faireConnaissanceAvec(ronin);
-		grandMere.faireConnaissanceAvec(yakusa);
-		grandMere.faireConnaissanceAvec(traitre);
-		
-		grandMere.ragoter();
-		
 		Ninja ninja = new Ninja("Colibri", 0, "cyanure", "Long Fangs");
-		ninja.direBonjour();
+		Colporteur colporteur = new Colporteur("Leo", 45);
 		
+		
+		Auberge auberge = new Auberge("Magique", 30);
+		auberge.nouvelArrivant(yakusa);
+		auberge.nouvelArrivant(traitre);
+		auberge.nouvelArrivant(samourai);
+		auberge.nouvelArrivant(colporteur);
+		auberge.nouvelArrivant(ninja);
+		auberge.nouvelArrivant(grandMere);
+		auberge.nouvelArrivant(ronin);
+		auberge.nouvelArrivant(commercant);
+		auberge.fight();
+		auberge.payerLaTournee(ninja);
 
 	}
 
